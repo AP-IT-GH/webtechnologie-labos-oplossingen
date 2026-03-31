@@ -1,16 +1,19 @@
 // Haal de waarden op uit de inputvelden
-const multiplier = parseInt(prompt("Geef het getal waarvan je de maaltafel wilt zien:"));
-const iterations = parseInt(prompt("Geef aan tot welk getal je de maaltafel wilt zien:"));
+const columns = parseInt(prompt("Geef het aantal kolommen in:"));
+const rows = parseInt(prompt("Geef het aantal rijen in:"));
 
-// De string variabele voor de maaltafelreeks
-let multiplications = "";
+// Lege string om het raster op te bouwen
+let grid = "";
 
-// Doorloop de loop het gewenste aantal keer en voeg het product toe aan de string
-for (let i = 1; i <= iterations; i++) {
-    multiplications += `${multiplier * i}, `;
+// Doorloop de rijen
+for (let i = 1; i <= rows; i++) {
+    // Doorloop de kolommen binnen elke rij
+    for (let j = 1; j <= columns; j++) {
+        grid += "x";
+    }
+    // Voeg een nieuwe regel toe na elke rij
+    grid += "\n";
 }
-// Verwijder de laatste komma en spatie
-multiplications = multiplications.substring(0, (multiplications.length - 2));
 
-// Toon de maaltafelreeks aan de gebruiker
-console.log(multiplications);
+// Toon het gegenereerde raster aan de gebruiker
+console.log(grid);

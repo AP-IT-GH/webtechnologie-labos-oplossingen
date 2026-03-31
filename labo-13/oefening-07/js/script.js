@@ -1,17 +1,14 @@
-const temperatuur = parseFloat(prompt("Geef de temperatuur in:"));
-const eenheid = prompt("Is dit in Celsius (C) of Fahrenheit (F)?").trim().toUpperCase();
+// Oefening 8: Willekeurig raden
 
-if (eenheid === "C") {
-    const resultaat = (temperatuur * 9 / 5) + 32;
-    console.log(`${temperatuur}°C = ${resultaat.toFixed(2)}°F`);
-    alert(`${temperatuur}°C = ${resultaat.toFixed(2)}°F`);
-}
-else if (eenheid === "F") {
-    const resultaat = (temperatuur - 32) * 5 / 9;
-    console.log(`${temperatuur}°F = ${resultaat.toFixed(2)}°C`);
-    alert(`${temperatuur}°F = ${resultaat.toFixed(2)}°C`);
-}
-else {
-    console.error("Ongeldige eenheid! Gebruik 'C' of 'F'.");
-    alert("Fout: ongeldig symbool. Gebruik 'C' of 'F'.");
+// 1. Genereer een willekeurig getal tussen 1 en 10
+let answer = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+
+// 2. Vraag de gebruiker om een gok
+let guess = Number(prompt("Raad het getal (tussen 1 en 10):"));
+
+// 3. Controleer het antwoord
+if (guess === answer) {
+    console.log("Gefeliciteerd, je hebt het juiste getal geraden!");
+} else {
+    console.log(`Helaas, het juiste getal was ${answer}.`);
 }

@@ -1,14 +1,16 @@
-// Oefening 7: Getal raden
+// Haal de waarden op uit de inputvelden
+const multiplier = parseInt(prompt("Geef het getal waarvan je de maaltafel wilt zien:"));
+const iterations = parseInt(prompt("Geef aan tot welk getal je de maaltafel wilt zien:"));
 
-// 1. Een getal dat de gebruiker moet raden.
-let answer = 4
+// De string variabele voor de maaltafelreeks
+let multiplications = "";
 
-// 2. Vraag de gebruiker om een gok
-let guess = Number(prompt("Raad het getal (tussen 1 en 10):"));
-
-// 3. Controleer het antwoord
-if (guess === answer) {
-    console.log("Gefeliciteerd, je hebt het juiste getal geraden!");
-} else {
-    console.log(`Helaas, het juiste getal was ${answer}.`);
+// Doorloop de loop het gewenste aantal keer en voeg het product toe aan de string
+for (let i = 1; i <= iterations; i++) {
+    multiplications += `${multiplier * i}, `;
 }
+// Verwijder de laatste komma en spatie
+multiplications = multiplications.substring(0, (multiplications.length - 2));
+
+// Toon de maaltafelreeks aan de gebruiker
+console.log(multiplications);
