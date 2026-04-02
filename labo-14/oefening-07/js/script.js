@@ -1,4 +1,3 @@
-const result = document.getElementById('result');
 
 let spreadsheet = [
     [100, 104, 105],
@@ -26,8 +25,7 @@ for (let i = 0; i < spreadsheet[2].length; i++) {
     sumRow3 += spreadsheet[2][i];
 }
 
-// Toon de resultaten op het scherm
-result.innerHTML = `
-Som van de elementen in rij 1: ${sumRow1} <br>
-Som van de elementen in rij 2: ${sumRow2} <br>
-Som van de elementen in rij 3: ${sumRow3}`;
+// Print de resultaten in de console
+console.log("Som van de elementen in rij 1: " + sumRow1);
+console.log("Som van de elementen in rij 2: " + sumRow2);
+console.log("Som van de elementen in rij 3: " + sumRow3);

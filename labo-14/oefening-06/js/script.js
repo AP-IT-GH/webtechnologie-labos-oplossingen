@@ -1,5 +1,3 @@
-const list = document.getElementById('pokemon');
-const yourTeam = document.getElementById('team');
 
 const pokemon = [
     "Bulbasaur",
@@ -28,43 +26,35 @@ const pokemon = [
 // Maak een array voor het team
 let team = [];
 
-// Toon de lijst van pokémon aan de gebruiker
-for (let poke of pokemon) {
-    const item = document.createElement('li');
-    item.textContent = poke
-    list.appendChild(item);
+// Print de lijst van pokémon in de console
+for (let i = 0; i < pokemon.length; i++) {
+    console.log((i + 1) + ". " + pokemon[i]);
 }
 
-window.addEventListener('load', function(e){
+// Voeg pokémon toe aan het team met een do-while loop
+let input;
+do {
+    input = prompt("Welke Pokémon wil je in je team? [1-21] (Typ 'STOP' om te eindigen):");
 
-    // Voeg pokémon toe aan het team met een do-while loop
-    let input;
-    do {
-        input = prompt("Welke Pokémon wil je in je team? [1-21] (Typ 'STOP' om te eindigen):");
+    if (input !== null) {
+        const index = parseInt(input);
 
-        if (input !== null) {
-            const index = parseInt(input);
+        if (!isNaN(index) && index > 0 && index <= pokemon.length) {
+            const chosenPokemon = pokemon[index - 1];
 
-            if (!isNaN(index) && index > 0 && index <= pokemon.length) {
-                const chosenPokemon = pokemon[index - 1];
-
-                if (team.includes(chosenPokemon)) {
-                    alert(`Deze Pokémon zit al in je team.`);
-                } else {
-                    team.push(chosenPokemon);
-                    alert(`"${chosenPokemon}" is toegevoegd aan je team.`);
-                }
-            } else if (input.toLowerCase() !== "stop") {
-                alert(`Deze Pokémon ken ik niet.`);
+            if (team.includes(chosenPokemon)) {
+                console.log("Deze pokemon zit al in je team");
+            } else {
+                team.push(chosenPokemon);
             }
+        } else if (input.toLowerCase() !== "stop") {
+            console.log("Deze pokemon ken ik niet");
         }
-    } while (input !== null && input.toLowerCase() !== "stop");
-
-    // Toon het team van de gebruiker
-    for (const poke of team) {
-        const item = document.createElement('li');
-        item.textContent = poke
-        yourTeam.appendChild(item);
     }
+} while (input !== null && input.toLowerCase() !== "stop");
 
-});
+// Print het team van de gebruiker in de console
+console.log("Jouw team van pokemon is:");
+for (let i = 0; i < team.length; i++) {
+    console.log((i + 1) + ". " + team[i]);
+}

@@ -1,5 +1,3 @@
-const titleField = document.getElementById('title');
-const recipeField = document.getElementById('recipe');
 
 // Recept object aanmaken
 const spaghetti = {
@@ -19,7 +17,7 @@ function calculateTotalPrice(recipe) {
     let total = 0;
 
     // Loop door alle ingredienten
-    for (let i=0; i < recipe.ingredients.length; i++) {
+    for (let i = 0; i < recipe.ingredients.length; i++) {
         // Voeg de prijs van elk ingrediënt toe aan de totaalprijs
         total += recipe.ingredients[i].price;
     }
@@ -27,6 +25,6 @@ function calculateTotalPrice(recipe) {
     return total;
 }
 
-// Print de naam van het gerecht en de totaalprijs van alle ingrediënten
-titleField.textContent = spaghetti.name;
-recipeField.textContent = "totaalprijs van de ingrediënten: " + calculateTotalPrice(spaghetti).toFixed(2);
+// Print de naam van het gerecht en de totaalprijs van alle ingrediënten in de console
+console.log(spaghetti.name);
+console.log("Totaalprijs van de ingrediënten: " + calculateTotalPrice(spaghetti).toFixed(2));
