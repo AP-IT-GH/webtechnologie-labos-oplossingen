@@ -1,12 +1,12 @@
-const resultField = document.querySelector('#result');
-const currentYear = new Date().getFullYear();
+function sum(array) {
+    console.log(array);
 
-function isLeapYear(year) {
-    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) ? true : false;
-}
-
-for (let i=1950; i<currentYear; i++) {
-    if ( isLeapYear(i) ) {
-        resultField.innerHTML += `Het jaartal ${i} is een schrikkeljaar.<br>`;
+    let sum = 0;
+    for (let i=0; i < array.length; i++) {
+        sum  += array[i];
     }
+
+    return sum;
 }
+
+console.log(`de som van de array is: ${sum([1, 2, 4, 5])}.`);
