@@ -1,7 +1,7 @@
-// Oefening 7: Getal raden
+// Oefening 8: Willekeurig raden
 
-// 1. Een getal dat de gebruiker moet raden.
-let answer = 4
+// 1. Genereer een willekeurig getal tussen 1 en 10
+let answer = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
 // 2. Vraag de gebruiker om een gok
 let guess = Number(prompt("Raad het getal (tussen 1 en 10):"));
