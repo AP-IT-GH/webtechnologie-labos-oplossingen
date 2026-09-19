@@ -50,7 +50,10 @@ label {
     font-weight: 600;
 }
 
-label span.required {
+/* Pseudo-class: Required + pseudo-element ::after */
+/* Het label staat voor het invoerveld, daarom kijken we met :has() of de groep een verplicht veld bevat */
+.form-group:has(:required) > label::after {
+    content: " *";
     color: var(--error-color);
 }
 
