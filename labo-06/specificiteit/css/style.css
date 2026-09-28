@@ -1,0 +1,49 @@
+/*
+	paragraaf 1: green, want 'article p' (0,0,2,0) weegt zwaarder dan 'p' (0,0,1,0)
+	paragraaf 2: blue, want één class (0,1,0,0 voor '.intro') weegt zwaarder dan twee elementen (0,0,2,0)
+	paragraaf 3: orange, want 'p.intro.highlight' (0,2,1,0) heeft twee classes en weegt dus zwaarder
+	              dan '.intro' en '.highlight' (elk 0,1,0,0)
+	paragraaf 4: purple, want een id (1,0,0,0) weegt altijd zwaarder dan een class
+	paragraaf 5: magenta, want '.tip' en '.alert' hebben dezelfde specificiteit (0,1,0,0).
+	              Bij een gelijkstand wint de regel die het laatst in de stylesheet staat. De volgorde
+	              van de classes in het class-attribuut speelt geen rol.
+*/
+
+/* 0,0,1,0 */
+p {
+	color: black;
+}
+/* 0,0,2,0 */
+article p {
+	color: green;
+}
+/* 0,1,0,0 */
+.intro {
+	color: blue;
+}
+/* 0,1,0,0 */
+.highlight {
+	color: teal;
+}
+/* 0,2,1,0 */
+p.intro.highlight {
+	color: orange;
+}
+/* 1,0,0,0 */
+#summary {
+	color: purple;
+}
+/* 0,1,0,0 */
+.tip {
+	color: brown;
+}
+/* 0,1,0,0 */
+.alert {
+	color: magenta;
+}
+
+/* stap 5: 0,1,2,0 weegt zwaarder dan '.intro' (0,1,0,0), maar lichter dan
+   'p.intro.highlight' (0,2,1,0) en dan '#summary' (1,0,0,0). Enkel paragraaf 2 verandert. */
+article p.intro {
+	color: green;
+}

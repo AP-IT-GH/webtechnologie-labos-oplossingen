@@ -1,0 +1,32 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+	background-color: darkslategray;
+	padding: 10px;
+}
+
+/* descendant-selector: elke link binnen de nav, ook die in het submenu */
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+/* descendant-selector: ook de ul van het submenu verliest zijn bolletjes */
+nav ul {
+	list-style: none;
+	padding-left: 20px;
+}
+
+/* child-selector: enkel de links die een direct kind zijn van een li van het hoofdmenu */
+nav > ul > li > a {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* descendant-selector: enkel de links binnen een ul die zelf in een ul zit */
+nav ul ul a {
+	font-size: 14px;
+	font-style: italic;
+}
