@@ -1,0 +1,60 @@
+/* met modern-normalize: de nuttige browserstijlen blijven staan, we passen enkel aan wat we anders willen */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f0f0f0;
+}
+
+.card {
+    width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+h1 {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+a {
+    color: rebeccapurple;
+}
+
+ul {
+    padding-left: 24px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 1px solid #000;
+    background-color: rebeccapurple;
+    color: #fff;
+    cursor: pointer;
+}
