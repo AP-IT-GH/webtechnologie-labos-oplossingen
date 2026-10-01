@@ -1,0 +1,126 @@
+/* bovenop modern-normalize: we passen enkel aan wat we anders willen */
+
+/* deel 1: basisopmaak */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f5f3ef;
+}
+
+main {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header,
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* deel 2: de navigatie */
+
+nav a:hover {
+    color: #e4572e;
+    text-decoration: underline;
+}
+
+/* zichtbaar waar je staat als je met Tab navigeert */
+nav a:focus {
+    outline: 3px solid #e4572e;
+}
+
+/* de laatste nav-link ziet uit als een knopje */
+nav ul li:last-child a {
+    padding: 6px 12px;
+    border: 1px solid #e4572e;
+}
+
+/* deel 3: de lineup */
+
+.lineup {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lineup li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.lineup li:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #e4572e;
+}
+
+.lineup li:nth-child(even) {
+    background-color: #ebe7e0;
+}
+
+.lineup li:last-child {
+    border-bottom: none;
+}
+
+/* staat onder de :nth-child(even)-regel en wint dus bij gelijke specificiteit */
+.lineup li:hover {
+    background-color: #e4572e;
+    color: #fff;
+}
+
+/* deel 4: praktische info */
+
+/* article:nth-child(1) werkt niet: het eerste kind van de section is de h2, niet een article.
+   :first-of-type kijkt enkel naar elementen van hetzelfde type en vindt dus wel het eerste article. */
+#praktisch article:first-of-type {
+    border-left: 4px solid #e4572e;
+    padding-left: 12px;
+}
+
+#praktisch article p:nth-of-type(2) {
+    font-size: 14px;
+    color: #555;
+}
+
+/* deel 5: artikels met een link */
+
+/* :has() selecteert de ouder op basis van wat die bevat */
+#praktisch article:has(a) {
+    padding: 12px;
+    background-color: #ebe7e0;
+}
+
+/* deel 6: de knop */
+
+button {
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #e4572e;
+}
