@@ -10,6 +10,10 @@ body {
 }
 
 nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +35,7 @@ main {
 }
 
 figure {
+  margin: 0; /* een figure heeft standaard een marge van 0 40px */
   flex: 1 30%;
 }
 

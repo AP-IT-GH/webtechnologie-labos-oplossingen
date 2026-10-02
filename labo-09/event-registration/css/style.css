@@ -70,12 +70,6 @@ input[type="file"] {
     transition: all 0.3s ease;
 }
 
-/* Herstel checkbox en radio button uiterlijk die door reset.css zijn gewist */
-input[type="checkbox"],
-input[type="radio"] {
-    all: revert;
-}
-
 /* Pseudo-class: Focus */
 input:focus, textarea:focus {
     outline: none;

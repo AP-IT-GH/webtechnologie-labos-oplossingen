@@ -24,12 +24,14 @@ body {
 h1 {
   color: var(--secondary-color);
   font-size: 5rem;
-  font-weight: bold;
   letter-spacing: 0.2rem;
+  margin: 0;
   padding: 6rem 4rem 4rem 8rem;
 }
 h2 {
   font-size: 1rem;
+  margin: 0;
+  font-weight: normal; /* normalize laat een h2 vet, het ontwerp wil dat niet */
   text-transform: uppercase;
   color: var(--primary-color);
   letter-spacing: 0.1rem;
@@ -37,6 +39,7 @@ h2 {
 }
 p {
   font-size: 0.9rem;
+  margin: 0;
   line-height: 1.2rem;
   color: var(--tertiary-color);
   padding-bottom: 1rem;
@@ -46,6 +49,9 @@ a {
   font-size: 0.9rem;
   text-decoration: none;
   color: var(--link-color);
+}
+figure {
+  margin: 0;
 }
 figcaption {
   color: white;
@@ -232,6 +238,10 @@ main {
 
 /*--- socials ---*/
 .socials {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   display: flex;
   justify-content: flex-start;
 }
@@ -278,7 +288,6 @@ footer p {
   h1 {
     color: rgb(231, 227, 79);
     font-size: 3rem;
-    font-weight: bold;
     letter-spacing: 0.2rem;
     padding: 3rem 2rem 2rem 3rem;
   }

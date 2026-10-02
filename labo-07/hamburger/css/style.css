@@ -20,6 +20,7 @@ header {
     grid-template-columns: 1fr 1fr;
 
     h1, nav {
+        margin: 0; /* een h1 heeft standaard een marge boven en onder */
         height: 3rem;
         border: 1px solid black;
         background-color: #4668A6;
@@ -55,6 +56,10 @@ footer {
     box-shadow: 5px 5px 0 black;
 
     ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;

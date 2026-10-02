@@ -19,6 +19,13 @@ body {
 
 }
 
+/* een reset perkt afbeeldingen in tot hun container, normalize niet:
+   daarom doen we dat hier zelf */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .label {
   border-radius: 10px;
   background-color: white;
@@ -59,6 +66,7 @@ body {
 
   h2 {
     font-size: 1.4rem;
+    margin: 0;
   }
 }
 

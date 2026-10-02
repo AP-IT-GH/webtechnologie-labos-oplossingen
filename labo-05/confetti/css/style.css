@@ -1,4 +1,9 @@
 ul {
+  /* de lijst is hier enkel layout: geen bolletjes, geen marge, geen inspringing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

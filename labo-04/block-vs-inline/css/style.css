@@ -3,19 +3,25 @@ body {
 	padding: 1rem;
 }
 
+/*
+	normalize laat de browserstijlen staan. Een h1 en h2 zijn dus al vet en
+	hebben al een eigen grootte. Ook een p heeft een standaardmarge.
+	We zetten enkel de grootte en de marges naar onze hand.
+*/
 h1 {
 	font-size: 2rem;
-	font-weight: bold;
+	margin-top: 0;
 	margin-bottom: 1rem;
 }
 
 h2 {
 	font-size: 1.25rem;
-	font-weight: bold;
+	margin: 0;
 }
 
 p {
 	line-height: 1.5;
+	margin: 0;
 }
 
 /*

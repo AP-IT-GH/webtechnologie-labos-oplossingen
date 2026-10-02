@@ -8,6 +8,10 @@ body {
 }
 
 nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
   display: flex;
   justify-content: right;
   align-items: center;
@@ -31,7 +35,7 @@ main {
 .item {
   flex: 1 1 50%; /* Each child will take up 50% of the parent container's width */
   padding: 10px;
-
+  margin: 0; /* de standaardmarge van een p zou de flex-items uit elkaar duwen */
 }
 
 .item:nth-child(3n) {

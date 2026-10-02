@@ -39,10 +39,6 @@ input::placeholder {
     color: gray;
 }
 
-h2 {
-    all: revert;
-}
-
 label {
     display: block;
     margin-bottom: 0.3rem;

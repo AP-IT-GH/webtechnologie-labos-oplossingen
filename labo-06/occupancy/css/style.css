@@ -4,13 +4,14 @@ body {
 
 table {
     border: 1px solid black;
+    /* normalize laat de cellen los van elkaar staan, dus plakken we ze zelf samen */
+    border-collapse: collapse;
 }
 
 thead tr th,
 tbody tr th {
     background-color: black;
     color: white;
-    font-weight: bold;
 }
 
 td,
