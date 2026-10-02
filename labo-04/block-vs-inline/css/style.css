@@ -1,0 +1,43 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 1rem;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+p {
+	line-height: 1.5;
+}
+
+/*
+	stap 1 en 2: een span is inline, dus width en height worden genegeerd.
+	Met display: inline-block worden ze wel toegepast en blijft het woord
+	toch in de tekstregel staan.
+*/
+.term {
+	background-color: lightgoldenrodyellow;
+	padding: 4px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+/*
+	stap 3: een div is block, dus de kaarten staan onder elkaar.
+	Met inline-block en een breedte komen ze naast elkaar.
+*/
+.kaart {
+	border: 1px solid #cccccc;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+	width: 45%;
+}

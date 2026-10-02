@@ -1,0 +1,47 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	padding: 5px;
+}
+
+/* [attribuut="waarde"]: enkel links die effectief in een nieuw tabblad openen */
+a[target="_blank"] {
+	font-weight: bold;
+}
+
+/* [attribuut="waarde"]: werkt op elk attribuut, niet enkel op href */
+a[lang="en"] {
+	font-style: italic;
+}
+
+/* *= : de waarde bevat deze letterreeks ergens */
+a[href*="apload"] {
+	color: darkgreen;
+}
+
+/* $= : de waarde eindigt op deze letterreeks */
+a[href$=".pdf"] {
+	background-color: lightgoldenrodyellow;
+	padding: 2px 6px;
+}
+
+/* ^= : de waarde begint met deze letterreeks */
+a[href^="mailto:"] {
+	font-family: "Courier New", Courier, monospace;
+}
+
+a[href^="#"] {
+	color: gray;
+	text-decoration: none;
+}
+
+/* [attribuut]: het attribuut bestaat, de waarde maakt niet uit */
+a[title] {
+	border-bottom: 1px dotted gray;
+}

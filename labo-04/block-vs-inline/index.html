@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>block-vs-inline</title>
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/style.css">
+	</head>
+	<body>
+		<main>
+			<h1>Block of inline?</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+				incididunt ut <span class="term">labore</span> et dolore magna aliqua. Ut enim ad
+				minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+				commodo <span class="term">consequat</span>. Duis aute irure dolor in
+				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+				<span class="term">deserunt mollit</span> anim id est laborum.
+			</p>
+			<div class="kaart">
+				<h2>Block</h2>
+				<p>Een block-element begint op een nieuwe regel en neemt de volledige beschikbare breedte in.</p>
+			</div>
+			<div class="kaart">
+				<h2>Inline</h2>
+				<p>Een inline-element loopt mee in de tekstregel en negeert width en height.</p>
+			</div>
+		</main>
+
+		<!--
+			1. <span> voegt zelf geen betekenis toe. De gemarkeerde woorden zijn niet belangrijker
+			   (<strong>) en krijgen geen nadruk (<em>), ze worden enkel visueel aangeduid. Daarom is
+			   een betekenisloze inline-container hier de juiste keuze.
+			2. Voor een afgerond nieuwsbericht gebruik je <article>, met de titel in een <h2>. Dan
+			   heeft het blok wel een betekenis en is een <div> niet nodig.
+		-->
+	</body>
+</html>
