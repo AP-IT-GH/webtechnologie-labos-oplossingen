@@ -25,8 +25,9 @@ li {
 
 em {
   /* em is een inline element, maar omdat de li's flexbox parents zijn, worden rechtstreekse children "blockified" */
-  height: 50px;
-  width: 50px;
+  /* in vw, zo schalen de bolletjes mee met de breedte van het scherm */
+  height: 5vw;
+  width: 5vw;
   border-radius: 50%;
 }
 

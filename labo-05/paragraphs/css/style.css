@@ -3,8 +3,17 @@ html {
 }
 
 body {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* de body is zelf een flex-container en centreert zijn kinderen op de dwarsas */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header,
+main {
+  width: 100%;
+  max-width: 1000px;
 }
 
 nav ul {
@@ -18,7 +27,6 @@ nav ul {
 }
 
 nav li {
-  display: flex;
   margin: 0.5rem;
   padding: 1rem;
 }
@@ -27,7 +35,7 @@ main {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-image: url("../images/bg.jpg");
+  background-image: url("../images/bg.webp");
   background-color: lightgrey;
   padding: 10px;
 }
