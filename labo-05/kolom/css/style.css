@@ -1,0 +1,58 @@
+html {
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+body {
+  /* de body is een flex-container in kolomrichting: de hoofdas loopt nu van boven naar onder */
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* align-items werkt op de dwarsas, bij een kolom is dat horizontaal */
+  align-items: center;
+  background-color: papayawhip;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 600px;
+}
+
+header {
+  background-color: #009f58;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  /* main is het enige flex-item dat mag groeien, zo wordt de footer naar beneden geduwd */
+  flex-grow: 1;
+
+  /* ook main is een kolom: de artikels komen onder elkaar met ruimte ertussen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+article {
+  background-color: white;
+  padding: 1rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+footer {
+  background-color: #005cb0;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
