@@ -8,6 +8,9 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  /* justify-content werkt op de hoofdas, bij een kolom is dat verticaal:
+     header bovenaan, footer onderaan, main ertussen */
+  justify-content: space-between;
   /* align-items werkt op de dwarsas, bij een kolom is dat horizontaal */
   align-items: center;
   background-color: papayawhip;
@@ -28,17 +31,11 @@ header {
 }
 
 main {
-  /* main is het enige flex-item dat mag groeien, zo wordt de footer naar beneden geduwd */
-  flex-grow: 1;
-
   /* ook main is een kolom: de artikels komen onder elkaar met ruimte ertussen */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
   padding: 1rem;
-
-  text-align:
 }
 
 article {
