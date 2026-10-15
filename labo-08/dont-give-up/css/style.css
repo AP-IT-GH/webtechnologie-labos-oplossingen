@@ -1,38 +1,37 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /* normalize regelt box-sizing en de marge op de body,
    een ul heeft wel nog zijn standaardmarge en inspringing */
 ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10vw;
-  background-color: red;
-  font-weight: 900;
-}
+    margin: 0;
+    padding: 0;
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-li:hover a {
-  color: red;
-}
-li:hover {
-  background-color: white;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 10rem;
+    background-color: red;
+    font-weight: 900;
 }
 
 li {
-  flex: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    color: white;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    background-color: white;
+    color: red;
 }
 
 @media (min-width: 1000px) {
-  ul {
-    flex-direction: row;
-  }
+    ul {
+        flex-direction: row;
+    }
 }
