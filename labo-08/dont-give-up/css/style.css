@@ -1,10 +1,8 @@
-* {
+/* normalize regelt box-sizing en de marge op de body,
+   een ul heeft wel nog zijn standaardmarge en inspringing */
+ul {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
   display: flex;
   flex-direction: column;
   height: 100vh;
