@@ -17,9 +17,12 @@ body {
 
 @keyframes grow {
     0% {
-        transform: scaleX(1.1);
+        transform: scaleX(1);
     }
     50% {
         transform: scaleX(1.8);
+    }
+    100% {
+        transform: scaleX(1);
     }
 }

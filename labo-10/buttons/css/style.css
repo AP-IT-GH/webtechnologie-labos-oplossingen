@@ -12,6 +12,8 @@ button {
     margin: 5px;
     /* onzichtbare rand zorgt dat content niet beweegt door hover-effect hieronder */
     border: 2px solid rgba(0, 0, 0, 0);
+    /* transitie op de knop zelf, zodat ze in beide richtingen werkt */
+    transition: all 0.3s ease;
 }
 
 #button1:hover {
