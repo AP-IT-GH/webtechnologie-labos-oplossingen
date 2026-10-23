@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Observatorium Zenit is een publieke sterrenwacht in Antwerpen. Bekijk het programma en reserveer je plaats onder de koepel.">
+    <meta name="author" content="Observatorium Zenit">
+    <title>Observatorium Zenit</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<header class="site-header">
+    <a class="logo" href="./index.html">
+        <img src="./assets/logo.svg" width="48" height="48" alt="">
+        <span>Observatorium Zenit</span>
+    </a>
+
+    <!-- twee nav-elementen op deze pagina, dus elk een eigen aria-label zodat
+         schermlezers ze uit elkaar houden -->
+    <nav class="main-nav" aria-label="Hoofdnavigatie">
+        <ul>
+            <li><a href="#discover">Ontdek</a></li>
+            <li><a href="#objects">Objecten</a></li>
+            <li><a href="#programme">Programma</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <a class="button" href="#contact">Reserveer</a>
+</header>
+
+<section id="hero">
+    <h1>Kijk mee naar de nachtelijke hemel</h1>
+    <p class="tagline">
+        Elke donderdag- en vrijdagavond draait de koepel open boven het Zuid.
+        Een vrijwilliger stelt de telescoop in, jij kijkt.
+    </p>
+    <a class="scroll-hint" href="#discover">Ontdek wat er te zien is</a>
+</section>
+
+<main>
+    <section id="discover">
+        <article class="intro">
+            <h2>Een sterrenwacht midden in de stad</h2>
+            <p>
+                Antwerpen is niet de donkerste plek van het land, en toch staat er al sinds 1934 een
+                koepel op het dak van de oude stadsschool aan de Sterrenkundelaan. De refractor van
+                twintig centimeter die er toen werd geplaatst, draait vandaag nog altijd mee met de
+                hemel. Wat je door die lens ziet hangt af van het seizoen en van het weer, maar er is
+                bijna altijd iets: <a href="#objects">de maan</a> met haar kraters langs de
+                schaduwlijn, <a href="#objects">Saturnus</a> met een ring die scherper staat dan je
+                op een foto zou verwachten, of <a href="#objects">de Orionnevel</a> als een vlek licht
+                die pas vorm krijgt wanneer je er een paar minuten naar kijkt.
+            </p>
+            <p>
+                Onze vrijwilligers zijn amateurastronomen. Ze leggen uit wat je ziet, waarom het er zo
+                uitziet en waar je het zelf kan terugvinden zonder telescoop. Je hoeft niets te kennen
+                om mee te komen kijken, en je hoeft geen eigen materiaal mee te brengen.
+            </p>
+        </article>
+
+        <aside class="hours" aria-labelledby="hours-title">
+            <h2 id="hours-title">Openingsuren</h2>
+            <ul>
+                <li><span>donderdag</span> <span>20.00 &ndash; 23.00</span></li>
+                <li><span>vrijdag</span> <span>20.00 &ndash; 23.00</span></li>
+                <li><span>zaterdag</span> <span>14.00 &ndash; 17.00</span></li>
+                <li><span>zondag</span> <span>gesloten</span></li>
+            </ul>
+            <p>
+                Bij bewolking gaat de koepel niet open, maar de lezing in de zaal gaat altijd door.
+                Twijfel je? <a href="#contact">Bel ons</a> vanaf 19.00.
+            </p>
+        </aside>
+    </section>
+
+    <section id="objects">
+        <h2>Zes objecten die je deze maand kan zien</h2>
+
+        <ul class="object-list">
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-moon.svg" width="800" height="600"
+                             alt="De maan met kraters langs de schaduwlijn">
+                        <figcaption>
+                            <h3>De Maan</h3>
+                            <p>Kijk vlak naast de schaduwlijn, daar staan de kraters op hun scherpst.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-saturn.svg" width="800" height="600"
+                             alt="De planeet Saturnus met haar ringenstelsel">
+                        <figcaption>
+                            <h3>Saturnus</h3>
+                            <p>De ring staat dit jaar bijna op zijn kant, een zeldzaam gezicht.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-orion.svg" width="800" height="600"
+                             alt="De Orionnevel, een roze en blauwe gaswolk">
+                        <figcaption>
+                            <h3>De Orionnevel</h3>
+                            <p>Een stervormingsgebied op 1 344 lichtjaar, zichtbaar als vage vlek.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-milky-way.svg" width="800" height="600"
+                             alt="De band van de Melkweg tegen een sterrenhemel">
+                        <figcaption>
+                            <h3>De Melkweg</h3>
+                            <p>Vanuit de stad nauwelijks te zien, op onze kampavonden wel.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-eclipse.svg" width="800" height="600"
+                             alt="Een zonsverduistering met zichtbare corona">
+                        <figcaption>
+                            <h3>Zonsverduistering</h3>
+                            <p>Op 12 augustus 2026 schuift de maan voor de zon, wij filteren mee.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="object-card">
+                <a href="#">
+                    <figure>
+                        <img src="./assets/object-comet.svg" width="800" height="600"
+                             alt="Een komeet met een lange lichtende staart">
+                        <figcaption>
+                            <h3>Kometen</h3>
+                            <p>De staart wijst altijd van de zon weg, niet achter de komeet aan.</p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="programme">
+        <h2>Programma</h2>
+
+        <!-- de tabel heeft een minimumbreedte: op een smal scherm scrollt dit
+             blokje horizontaal in plaats van de hele pagina te verbreden -->
+        <div class="table-scroll">
+            <table>
+                <caption>Publieksavonden maart 2026. Reserveren is nodig, betalen doe je ter plaatse.</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Datum</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">Activiteit</th>
+                    <th scope="col">Prijs</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">do 5 maart</th>
+                    <td>20.00</td>
+                    <td>Maankijken met de refractor</td>
+                    <td>&euro;&nbsp;6</td>
+                </tr>
+                <tr>
+                    <th scope="row">vr 13 maart</th>
+                    <td>20.30</td>
+                    <td>Saturnus en zijn manen</td>
+                    <td>&euro;&nbsp;6</td>
+                </tr>
+                <tr>
+                    <th scope="row">za 21 maart</th>
+                    <td>14.00</td>
+                    <td>Zonnewaarnemen met H-alfafilter</td>
+                    <td>&euro;&nbsp;4</td>
+                </tr>
+                <tr>
+                    <th scope="row">do 26 maart</th>
+                    <td>20.30</td>
+                    <td>Lezing: hoe meet je een lichtjaar?</td>
+                    <td>gratis</td>
+                </tr>
+                <tr>
+                    <th scope="row">vr 27 maart</th>
+                    <td>21.00</td>
+                    <td>Deep sky voor beginners</td>
+                    <td>&euro;&nbsp;8</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact">
+        <article class="contact-form">
+            <h2>Reserveer je plaats</h2>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Jouw gegevens</legend>
+
+                    <p class="field">
+                        <label for="name">Naam</label>
+                        <input type="text" id="name" name="name" autocomplete="name" required>
+                    </p>
+                    <p class="field">
+                        <label for="email">E-mailadres</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Jouw bezoek</legend>
+
+                    <p class="field">
+                        <label for="visit-date">Datum</label>
+                        <input type="date" id="visit-date" name="visit-date" required>
+                    </p>
+                    <p class="field">
+                        <label for="people">Aantal personen</label>
+                        <input type="number" id="people" name="people" min="1" max="8" value="2" required>
+                    </p>
+                    <p class="field">
+                        <label for="message">Vraag of opmerking</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </p>
+                </fieldset>
+
+                <button type="submit" class="button">Verstuur aanvraag</button>
+            </form>
+        </article>
+
+        <aside class="contact-info" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+
+            <address>
+                Observatorium Zenit<br>
+                Sterrenkundelaan 12<br>
+                2000 Antwerpen<br>
+                <a href="tel:+3232345678">+32&nbsp;3&nbsp;234&nbsp;56&nbsp;78</a><br>
+                <a href="mailto:bezoek@zenit.example">bezoek@zenit.example</a>
+            </address>
+
+            <h3>Volg ons</h3>
+            <ul class="socials">
+                <li>
+                    <a href="#"><img src="./assets/icon-instagram.svg" width="48" height="48" alt="Instagram"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/icon-youtube.svg" width="48" height="48" alt="YouTube"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/icon-facebook.svg" width="48" height="48" alt="Facebook"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./assets/icon-linkedin.svg" width="48" height="48" alt="LinkedIn"></a>
+                </li>
+            </ul>
+        </aside>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Observatorium Zenit &middot; Sterrenkundelaan 12, 2000 Antwerpen</p>
+
+    <nav aria-label="Juridische links">
+        <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Toegankelijkheid</a></li>
+        </ul>
+    </nav>
+</footer>
+</body>
+
+</html>
