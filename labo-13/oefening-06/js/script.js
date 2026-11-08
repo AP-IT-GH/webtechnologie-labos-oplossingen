@@ -1,27 +1,32 @@
-let invoer = prompt("Geef een cijfer tussen 0 en 10:");
-let cijfer = Number(invoer);
-let beoordeling;
+const grade = parseInt(prompt("Geef een cijfer tussen 0 en 10:"), 10);
+let rating;
 
-if (isNaN(cijfer) || cijfer < 0 || cijfer > 10) {
-    beoordeling = "Fout: geef een geldig cijfer tussen 0 en 10.";
-} else {
-    switch (true) {
-        case (cijfer >= 0 && cijfer <= 2):
-            beoordeling = "Zeer slecht";
-            break;
-        case (cijfer >= 3 && cijfer <= 4):
-            beoordeling = "Onvoldoende";
-            break;
-        case (cijfer >= 5 && cijfer <= 6):
-            beoordeling = "Voldoende";
-            break;
-        case (cijfer >= 7 && cijfer <= 8):
-            beoordeling = "Goed";
-            break;
-        case (cijfer >= 9 && cijfer <= 10):
-            beoordeling = "Uitstekend";
-            break;
-    }
+// Cases zonder break vallen door naar de volgende case.
+// Zo groeperen we alle cijfers die dezelfde beoordeling krijgen.
+switch (grade) {
+    case 0:
+    case 1:
+    case 2:
+        rating = "Zeer slecht";
+        break;
+    case 3:
+    case 4:
+        rating = "Onvoldoende";
+        break;
+    case 5:
+    case 6:
+        rating = "Voldoende";
+        break;
+    case 7:
+    case 8:
+        rating = "Goed";
+        break;
+    case 9:
+    case 10:
+        rating = "Uitstekend";
+        break;
+    default:
+        rating = "Fout: geef een geldig cijfer tussen 0 en 10.";
 }
 
-console.log(beoordeling);
+console.log(rating);

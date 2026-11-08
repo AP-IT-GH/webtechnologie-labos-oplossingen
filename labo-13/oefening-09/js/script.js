@@ -1,16 +1,15 @@
-// Haal de waarden op uit de inputvelden
-const multiplier = parseInt(prompt("Geef het getal waarvan je de maaltafel wilt zien:"));
-const iterations = parseInt(prompt("Geef aan tot welk getal je de maaltafel wilt zien:"));
+// Het getal waarvan we de maaltafel maken en hoe ver we gaan
+const baseNumber = 5;
+const numberOfIterations = 10;
 
-// De string variabele voor de maaltafelreeks
+// De string waarin we de maaltafelreeks opbouwen
 let multiplications = "";
 
-// Doorloop de loop het gewenste aantal keer en voeg het product toe aan de string
-for (let i = 1; i <= iterations; i++) {
-    multiplications += `${multiplier * i}, `;
+for (let i = 1; i <= numberOfIterations; i++) {
+    multiplications += `${baseNumber * i}, `;
 }
-// Verwijder de laatste komma en spatie
-multiplications = multiplications.substring(0, (multiplications.length - 2));
 
-// Toon de maaltafelreeks aan de gebruiker
+// Knip de laatste ", " weg
+multiplications = multiplications.substring(0, multiplications.length - 2);
+
 console.log(multiplications);

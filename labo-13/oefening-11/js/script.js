@@ -1,22 +1,21 @@
-/*
-        We kunnen het te raden getal hard-coden, maar in dit voorbeeld genereren we elke keer de gebruiker op start klikt een nieuw willekeurig getal tussen 0 en 30
-        Math.random genereert een willekeurig getal tussen 0 en 1, door deze eerst te vermenigvuldigen met het maximum getal (30) en vervolgens af te ronden krijgen we een willekeurig getal tussen 0 en 30
-        Opgelet: als we correctNumber binnen de do-while loop zouden genereren, zal deze elke iteratie van de lus anders zijn en wordt het spel wel heel moeilijk.
-    */
+// Het te raden getal staat vast. Wil je elke keer een ander getal,
+// dan kan je het genereren zoals in oefening 8.
+const secretNumber = 17;
 
-const correctNumber = Math.round(Math.random() * 30);
-let answer;
+let guess;
 
+// Een do-while loopt altijd minstens één keer: we moeten de vraag
+// eerst stellen voor we iets kunnen controleren.
 do {
-    // de promptfunctie geeft altijd strings terug, dus we zorgen dat het nummertje wordt geinterpreteerd als een geheel nummer (integer) met parseInt. De tweede argument (10) die we aan parseInt meegeven aan de functie is de radix (talstelsel).
-    answer = parseInt(prompt("Geef een getal in tussen 0 en 30"), 10);
+    guess = parseInt(prompt("Raad het getal tussen 0 en 30:"), 10);
 
-    if (answer === correctNumber) {
-        alert("Correct!");
-    } else if (answer > correctNumber) {
-        alert("Lager!");
-    } else if (answer < correctNumber) {
-        // door hier gebruik te maken van een "else if (answer < correctNumber)" in plaats van een algemene "else", zorgen we er voor dat de do-lus zich herhaalt wanneer een gebruiker invalid input meegeeft (bv. een letter ipv een cijfer)
-        alert("Hoger!");
+    if (guess > secretNumber) {
+        console.log(`${guess} is te hoog, probeer lager.`);
+    } else if (guess < secretNumber) {
+        // Door hier else if te gebruiken in plaats van een gewone else,
+        // herhaalt de lus zich ook als de gebruiker geen geldig getal intypt
+        console.log(`${guess} is te laag, probeer hoger.`);
     }
-} while (answer !== correctNumber);
+} while (guess !== secretNumber);
+
+console.log("Gefeliciteerd, je hebt het juiste getal geraden!");

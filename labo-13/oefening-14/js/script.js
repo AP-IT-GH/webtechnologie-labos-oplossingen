@@ -1,20 +1,22 @@
-// Oefening: Fibonacci-reeks genereren
+// Oefening 14: Fibonacci-reeks
 
-// 1. Stel het aantal te genereren getallen in
 const numberOfGeneratedNumbers = 10;
 
-// 2. Maak een array om de Fibonacci-getallen in op te slaan
-let fibonacci = [];
+// Elk getal is de som van de twee vorige, dus die twee houden we bij
+let previous = 0;
+let current = 1;
 
-// 3. Voeg de eerste twee getallen toe (basis van de reeks)
-fibonacci[0] = 0;
-fibonacci[1] = 1;
+let sequence = "";
 
-// 4. Bereken de volgende getallen met een for-loop
-for (let i = 2; i < numberOfGeneratedNumbers; i++) {
-    fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+for (let i = 0; i < numberOfGeneratedNumbers; i++) {
+    sequence += `${previous}, `;
+
+    const next = previous + current;
+    previous = current;
+    current = next;
 }
 
-// 5. Toon de volledige reeks
-console.log(`De eerste ${numberOfGeneratedNumbers} Fibonacci-getallen zijn:`);
-console.log(fibonacci);
+// Knip de laatste ", " weg
+sequence = sequence.substring(0, sequence.length - 2);
+
+console.log(`De eerste ${numberOfGeneratedNumbers} Fibonacci-getallen zijn: ${sequence}`);

@@ -1,12 +1,20 @@
-let yearInput = prompt('Enter year');
-let year = parseInt(yearInput, 10);
+const year = parseInt(prompt("Geef het jaartal in:"), 10);
 
-// Controleren of het een schrikkeljaar is
+// De flowchart uit de opgave, letterlijk omgezet naar geneste if-statements
 let isLeapYear = false;
-if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
-    isLeapYear = true;
+
+if (year % 4 === 0) {
+    if (year % 100 === 0) {
+        if (year % 400 === 0) {
+            isLeapYear = true;
+        }
+    } else {
+        isLeapYear = true;
+    }
 }
 
-// Toon het resultaat aan de gebruiker
-let resultMessage = isLeapYear ? `${year} is een schrikkeljaar!` : `${year} is geen schrikkeljaar.`;
-console.log(resultMessage);
+if (isLeapYear) {
+    console.log(`${year} is een schrikkeljaar!`);
+} else {
+    console.log(`${year} is geen schrikkeljaar.`);
+}

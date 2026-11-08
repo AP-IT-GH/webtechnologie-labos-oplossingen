@@ -1,10 +1,14 @@
-// Oefening 8: Willekeurig raden
+// Oefening 8: Willekeurig getal
 
-// 1. Genereer een willekeurig getal tussen 1 en 10
-let answer = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+const minimum = 1;
+const maximum = 10;
 
-// 2. Vraag de gebruiker om een gok
-let guess = Number(prompt("Raad het getal (tussen 1 en 10):"));
+// 1. Math.random() geeft een kommagetal van 0 tot net onder 1.
+//    Dankzij de + 1 in de formule kan het maximum ook uitkomen.
+const answer = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+
+// 2. Vraag de gok van de gebruiker
+const guess = parseInt(prompt("Raad het getal (tussen 1 en 10):"), 10);
 
 // 3. Controleer het antwoord
 if (guess === answer) {
