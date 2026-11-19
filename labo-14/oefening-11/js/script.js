@@ -1,34 +1,18 @@
 
 // Importeer data uit JSON
-import animalsData from "../assets/json/dieren.json" with { type: 'json' };
+import todosData from "../assets/json/todos.json" with { type: 'json' };
 
-// Functie om een lijst van dierennamen terug te geven
-function getAnimalsList(animals) {
-    const animalNames = [];
-    for (let i = 0; i < animals.length; i++) {
-        animalNames.push(animals[i].name);
-    }
-    return animalNames;
-}
+// Maak een lege array voor de voltooide todos
+const completedTodos = [];
 
-// Roep de functie aan met het ingelezen array van dieren
-const animalsList = getAnimalsList(animalsData);
-
-// Print de genummerde lijst van dieren in de console
-for (let i = 0; i < animalsList.length; i++) {
-    console.log((i + 1) + ". " + animalsList[i]);
-}
-
-// Functie om informatie over een gekozen dier in de console te tonen
-function displayAnimalInfo(animals, choice) {
-    const chosenAnimal = animals[choice - 1];
-    if (chosenAnimal) {
-        console.log(chosenAnimal.info);
-    } else {
-        console.log("Foutieve keuze, gelieve enkel een getal te kiezen uit de lijst met opties.");
+// Loop door de todos en voeg voltooide todos toe aan de array
+for (let i = 0; i < todosData.length; i++) {
+    if (todosData[i].completed) {
+        completedTodos.push(todosData[i]);
     }
 }
 
-// Vraag de gebruiker een dier te kiezen via prompt
-const input = prompt("Welk dier wil je meer info over? [1-" + animalsData.length + "]:");
-displayAnimalInfo(animalsData, parseInt(input));
+// Print de titels van de voltooide todos in de console
+for (const todo of completedTodos) {
+    console.log(todo.title);
+}

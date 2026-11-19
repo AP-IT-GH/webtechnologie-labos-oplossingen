@@ -29,3 +29,14 @@ for (let i = 0; i < spreadsheet[2].length; i++) {
 console.log("Som van de elementen in rij 1: " + sumRow1);
 console.log("Som van de elementen in rij 2: " + sumRow2);
 console.log("Som van de elementen in rij 3: " + sumRow3);
+
+// Bereken het totaal van de hele tabel met een geneste lus
+let total = 0;
+
+for (const row of spreadsheet) {
+    for (const value of row) {
+        total += value;
+    }
+}
+
+console.log("Totaal van de hele tabel: " + total);

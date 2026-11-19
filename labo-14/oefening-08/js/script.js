@@ -1,30 +1,40 @@
 
-// Recept object aanmaken
-const spaghetti = {
-    name: "Spaghetti Bolognese",
-    description: "Een klassiek Italiaans gerecht",
-    persons: 4,
-    ingredients: [
-        { name: "Spaghetti", amount: "400 gram", price: 2.5 },
-        { name: "Gehakt", amount: "500 gram", price: 5 },
-        { name: "Tomatensaus", amount: "1 blik", price: 3 },
-        { name: "Ui", amount: "1 stuk", price: 0.5 }
-    ]
-};
+// Gegeven invoer als één string
+const input = "brood,melk,kaas,appels";
 
-// Functie om totaalprijs te berekenen
-function calculateTotalPrice(recipe) {
-    let total = 0;
+// Splits de string op de komma tot een array
+const shoppingList = input.split(",");
+console.log("Je lijst bevat " + shoppingList.length + " boodschappen.");
 
-    // Loop door alle ingredienten
-    for (let i = 0; i < recipe.ingredients.length; i++) {
-        // Voeg de prijs van elk ingrediënt toe aan de totaalprijs
-        total += recipe.ingredients[i].price;
-    }
+// Achteraan toevoegen met push(), vooraan toevoegen met unshift()
+shoppingList.push("boter");
+shoppingList.unshift("koffie");
+console.log(shoppingList.join(" | "));
 
-    return total;
+// Laatste element verwijderen met pop(). pop() geeft het verwijderde element terug
+const removedLast = shoppingList.pop();
+console.log(removedLast + " valt weg (laatste boodschap verwijderd).");
+
+// Eerste element verwijderen met shift()
+const removedFirst = shoppingList.shift();
+console.log(removedFirst + " hebben we nog in huis (eerste boodschap verwijderd).");
+
+// Zoek de index van "kaas" en vervang dat element via zijn index
+const cheeseIndex = shoppingList.indexOf("kaas");
+shoppingList[cheeseIndex] = "hummus";
+console.log("kaas stond op index " + cheeseIndex + " en is nu " + shoppingList[cheeseIndex] + ".");
+
+// indexOf() geeft -1 terug wanneer de waarde niet in de array zit
+if (shoppingList.indexOf("chips") === -1) {
+    console.log("chips staat niet op je lijst.");
 }
 
-// Print de naam van het gerecht en de totaalprijs van alle ingrediënten in de console
-console.log(spaghetti.name);
-console.log("Totaalprijs van de ingrediënten: " + calculateTotalPrice(spaghetti).toFixed(2));
+// Een index buiten bereik geeft undefined terug
+console.log("Element op index 10: " + shoppingList[10]);
+
+// Twee elementen verwijderen vanaf index 1 met splice()
+const removed = shoppingList.splice(1, 2);
+console.log("Verwijderd met splice(): " + removed.join(" en "));
+
+// De volledige lijst als één regel met join()
+console.log("Je definitieve boodschappenlijst: " + shoppingList.join(", "));
