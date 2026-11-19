@@ -28,3 +28,16 @@ const percentage = (total / (grades.length * 20)) * 100;
 console.log("Gemiddelde: " + average);
 console.log("Percentage: " + percentage + "%");
 console.log("Aantal gebuisde vakken: " + failed);
+
+// Uitbreiding: laat de gebruiker de punten zelf ingeven. Vervang de array hierboven
+// door onderstaande do while lus. De berekening eronder blijft identiek.
+//
+// const grades = [];
+// let input;
+//
+// do {
+//     input = prompt("Voer een punt in (typ 'stop' om te eindigen):");
+//     if (input !== null && input !== "" && !isNaN(input)) {
+//         grades.push(parseInt(input));
+//     }
+// } while (input !== null && input.toLowerCase() !== "stop");

@@ -1,12 +1,18 @@
 
 // Importeer data uit JSON
-import personData from "../assets/json/person.json" with { type: 'json' };
+import todosData from "../assets/json/todos.json" with { type: 'json' };
 
-// Print de volledige naam via dot-notatie
-console.log(personData.firstname + " " + personData.lastname);
+// Maak een lege array voor de voltooide todos
+const completedTodos = [];
 
-// Loop door de hobby's en print ze één voor één
-console.log("Hobbies:");
-for (let i = 0; i < personData.hobbies.length; i++) {
-    console.log("- " + personData.hobbies[i]);
+// Loop door de todos en voeg voltooide todos toe aan de array
+for (let i = 0; i < todosData.length; i++) {
+    if (todosData[i].completed) {
+        completedTodos.push(todosData[i]);
+    }
+}
+
+// Print de titels van de voltooide todos in de console
+for (const todo of completedTodos) {
+    console.log(todo.title);
 }

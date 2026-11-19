@@ -1,40 +1,40 @@
 
-// Array om de punten op te slaan
-const grades = [];
+// Gegeven invoer als één string
+const input = "brood,melk,kaas,appels";
 
-// Vraag de gebruiker om punten in te voeren met een do-while loop
-let input;
-do {
-    input = prompt("Voer een punt in (typ 'stop' om te eindigen):");
-    if (input !== null && input !== "" && !isNaN(input)) {
-        // Voeg het ingevoerde getal toe aan de array
-        grades.push(parseInt(input));
-    }
-} while (input !== null && input.toLowerCase() !== "stop");
+// Splits de string op de komma tot een array
+const shoppingList = input.split(",");
+console.log("Je lijst bevat " + shoppingList.length + " boodschappen.");
 
-let total = 0;
-let succeeded = 0;
-let failed = 0;
+// Achteraan toevoegen met push(), vooraan toevoegen met unshift()
+shoppingList.push("boter");
+shoppingList.unshift("koffie");
+console.log(shoppingList.join(" | "));
 
-for (const grade of grades) {
-    // Totaal nodig voor berekenen van gemiddelde
-    total += grade;
+// Laatste element verwijderen met pop(). pop() geeft het verwijderde element terug
+const removedLast = shoppingList.pop();
+console.log(removedLast + " valt weg (laatste boodschap verwijderd).");
 
-    // Aantal geslaagde nodig voor berekening percentage en aantal gebuisde
-    if (grade >= 10) {
-        succeeded++;
-    } else {
-        failed++;
-    }
+// Eerste element verwijderen met shift()
+const removedFirst = shoppingList.shift();
+console.log(removedFirst + " hebben we nog in huis (eerste boodschap verwijderd).");
+
+// Zoek de index van "kaas" en vervang dat element via zijn index
+const cheeseIndex = shoppingList.indexOf("kaas");
+shoppingList[cheeseIndex] = "hummus";
+console.log("kaas stond op index " + cheeseIndex + " en is nu " + shoppingList[cheeseIndex] + ".");
+
+// indexOf() geeft -1 terug wanneer de waarde niet in de array zit
+if (shoppingList.indexOf("chips") === -1) {
+    console.log("chips staat niet op je lijst.");
 }
 
-// Bereken gemiddelde
-const average = total / grades.length;
+// Een index buiten bereik geeft undefined terug
+console.log("Element op index 10: " + shoppingList[10]);
 
-// Bereken het percentage
-const percentage = (total / (grades.length * 20)) * 100;
+// Twee elementen verwijderen vanaf index 1 met splice()
+const removed = shoppingList.splice(1, 2);
+console.log("Verwijderd met splice(): " + removed.join(" en "));
 
-// Print de resultaten in de console
-console.log("Gemiddelde: " + average);
-console.log("Percentage: " + percentage + "%");
-console.log("Aantal gebuisde vakken: " + failed);
+// De volledige lijst als één regel met join()
+console.log("Je definitieve boodschappenlijst: " + shoppingList.join(", "));
