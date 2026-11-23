@@ -1,9 +1,8 @@
 // Nieuw li-element maken
 const newLi = document.createElement("li");
 
-newLi.textContent = "Nieuw Item"
-// newLi.innerHTML = "Nieuw Item" // alternatief voor regel 6
-
+newLi.textContent = "Nieuw item";
+// newLi.innerHTML = "Nieuw item"; // alternatief voor de regel hierboven
 
 // Bestaande ul selecteren en nieuw li-element toevoegen
 const myList = document.querySelector("#list");
