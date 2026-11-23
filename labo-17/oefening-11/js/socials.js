@@ -7,6 +7,7 @@ const socials = [
 
 const ul = document.querySelector('#socials');
 
+// versie 1: elementen één per één maken met createElement en appendChild
 socials.forEach(({ platform, link }) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
@@ -20,3 +21,17 @@ socials.forEach(({ platform, link }) => {
     li.appendChild(a);
     ul.appendChild(li);
 });
+
+// versie 2: hetzelfde resultaat met insertAdjacentHTML
+// zet versie 1 in commentaar als je deze versie wil uitproberen
+/*
+socials.forEach(({ platform, link }) => {
+    ul.insertAdjacentHTML("beforeEnd", `
+        <li>
+            <a href="${link}" target="_blank">
+                <img src="assets/icon${platform}.png" />
+            </a>
+        </li>
+    `);
+});
+*/
