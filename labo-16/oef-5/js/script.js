@@ -1,18 +1,25 @@
-function sortStrings(stringsArray) {
-  // Gebruik de ingebouwde sort() functie om alfabetisch te sorteren.
-  // De localeCompare functie zorgt ervoor dat we netjes alfabetisch
-  // sorteren (ook als er verschil in hoofdletters en kleine letters is).
-  stringsArray.sort((a, b) => a.localeCompare(b));
-
-  // Print het resultaat in de console
-  console.log("Gesorteerde strings:", stringsArray);
-
-  // Verder optioneel: retourneer de gesorteerde array
-  return stringsArray;
+// Functie die elk element van een array in de console print met forEach
+function printAll(items) {
+  // forEach roept de callback één keer op voor elk element van de array
+  items.forEach((item) => console.log(item));
 }
 
-// Voorbeeld van hoe studenten het kunnen aanroepen:
-const fruits = ["Banaan", "Appel", "druif", "Citroen", "aardbei"];
+// Functie die elk element print met zijn index erbij
+function printWithIndex(items) {
+  // De callback van forEach krijgt als tweede parameter de index van het element
+  items.forEach((item, index) => console.log(`${index}: ${item}`));
+}
 
-sortStrings(fruits);
-// Output in console: Gesorteerde strings: [ 'aardbei', 'Appel', 'Banaan', 'Citroen', 'druif' ]
+const planten = ['varen', 'cactus', 'monstera', 'basilicum'];
+
+printAll(planten);
+// varen
+// cactus
+// monstera
+// basilicum
+
+printWithIndex(planten);
+// 0: varen
+// 1: cactus
+// 2: monstera
+// 3: basilicum

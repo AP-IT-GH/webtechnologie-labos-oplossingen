@@ -1,32 +1,26 @@
-// JavaScript-functie die objecten sorteert op basis van een attribuutnaam
-function sortByAttribute(objectArray, attributeName) {
-  // Gebruik de sort-functie met een aangepaste vergelijkingsfunctie
-  objectArray.sort(function(a, b) {
-    // Vergelijk objecten op basis van het opgegeven attribuut
-    if (a[attributeName] < b[attributeName]) {
-      return -1;
-    } else if (a[attributeName] > b[attributeName]) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+const getallen = [3, 2, 12, 22, 4];
 
-  // Retourneer de gesorteerde array van objecten
-  return objectArray;
+// Zonder callback zet sort() alle waarden om naar strings.
+// '12' komt dan vóór '2', want '1' komt vóór '2' in de Unicode-tabel.
+console.log('Fout gesorteerd:', getallen.toSorted());
+// Fout gesorteerd: [ 12, 2, 22, 3, 4 ]
+
+// Met een callback bepalen we zelf hoe er vergeleken wordt.
+// a - b is negatief als a < b, positief als a > b en 0 als ze gelijk zijn:
+// precies wat sort() verwacht.
+function sortNumbers(numbers) {
+  // toSorted() geeft een nieuwe, gesorteerde array terug en laat de originele ongemoeid
+  return numbers.toSorted((a, b) => a - b);
 }
 
-// Voorbeeldgebruik van sortByAttribute-functie
-const people = [
-  { name: 'Bob', age: 45 },
-  { name: 'Charlie', age: 35 },
-  { name: 'Alice', age: 30 }
-];
+const gesorteerd = sortNumbers(getallen);
 
-console.log('Original Array:', people);
+console.log('Juist gesorteerd:', gesorteerd);
+// Juist gesorteerd: [ 2, 3, 4, 12, 22 ]
 
-// Sorteer objecten op basis van het attribuut 'age'
-const sortedPeople = sortByAttribute([...people], 'age');
+console.log('Origineel:', getallen);
+// Origineel: [ 3, 2, 12, 22, 4 ]
 
-console.log('Sorted Array:', sortedPeople);
-
+// Aflopend sorteren: draai a en b om
+console.log('Aflopend:', getallen.toSorted((a, b) => b - a));
+// Aflopend: [ 22, 12, 4, 3, 2 ]

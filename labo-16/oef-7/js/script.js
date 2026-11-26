@@ -1,24 +1,18 @@
-// JavaScript-functie die even getallen filtert en de overgebleven getallen verdubbelt
-function filterAndDouble(numbers) {
-    // Gebruik de filter-functie om alleen even getallen te behouden
-    const evenNumbers = numbers.filter(function(number) {
-      return number % 2 === 0;
-    });
+function sortStrings(stringsArray) {
+  // Gebruik de ingebouwde sort() functie om alfabetisch te sorteren.
+  // De localeCompare functie zorgt ervoor dat we netjes alfabetisch
+  // sorteren (ook als er verschil in hoofdletters en kleine letters is).
+  stringsArray.sort((a, b) => a.localeCompare(b));
 
-    // Gebruik de map-functie om de overgebleven getallen te verdubbelen
-    const doubledNumbers = evenNumbers.map(function(number) {
-      return number * 2;
-    });
+  // Print het resultaat in de console
+  console.log("Gesorteerde strings:", stringsArray);
 
-    // Retourneer de resulterende array
-    return doubledNumbers;
-  }
+  // Verder optioneel: retourneer de gesorteerde array
+  return stringsArray;
+}
 
-  // Voorbeeldgebruik van filterAndDouble-functie
-  const inputNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Voorbeeld van hoe studenten het kunnen aanroepen:
+const fruits = ["Banaan", "Appel", "druif", "Citroen", "aardbei"];
 
-  // Filter en verdubbel de getallen
-  const resultArray = filterAndDouble(inputNumbers);
-
-  console.log('Input Array:', inputNumbers);
-  console.log('Filtered and Doubled Array:', resultArray);
+sortStrings(fruits);
+// Output in console: Gesorteerde strings: [ 'aardbei', 'Appel', 'Banaan', 'Citroen', 'druif' ]
