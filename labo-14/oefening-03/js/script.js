@@ -6,15 +6,10 @@ const lastNames = ["Pietersen", "de Vries", "Bakker", "Legrand", "Errazzouki"];
 if (firstNames.length !== lastNames.length) {
     console.error("Fout: De lengte van de arrays is niet gelijk.");
 } else {
-    // Maak een lege array voor de volledige namen
-    const fullNames = [];
-
     // Gebruik een for-loop om door de lijst van namen te lopen
-    for (let i=0; i<firstNames.length; i++) {
-        // Voeg voor- en achternaam samen en voeg deze toe aan de array van volledige namen
+    for (let i = 0; i < firstNames.length; i++) {
+        // Voeg voor- en achternaam samen en print de volledige naam
         const fullName = firstNames[i] + " " + lastNames[i];
-        fullNames.push(fullName);
+        console.log(fullName);
     }
-
-    console.log(fullNames);
 }
