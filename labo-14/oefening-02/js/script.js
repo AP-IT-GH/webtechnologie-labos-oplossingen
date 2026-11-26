@@ -1,20 +1,13 @@
-// Maak twee arrays met voornamen en achternamen
-const firstNames = ["Emma", "Liam", "Sophie", "Noah", "Fatima"];
-const lastNames = ["Pietersen", "de Vries", "Bakker", "Legrand", "Errazzouki"];
+// Maak een array van getallen
+const numbers = [1, 2, 3, 4, 5, 6];
 
-// Controleer of de lengte van beide arrays gelijk is
-if (firstNames.length !== lastNames.length) {
-    console.error("Fout: De lengte van de arrays is niet gelijk.");
-} else {
-    // Maak een lege array voor de volledige namen
-    const fullNames = [];
+// Initialiseer een variabele voor de som
+let sum = 0;
 
-    // Gebruik een for-loop om door de lijst van namen te lopen
-    for (let i=0; i<firstNames.length; i++) {
-        // Voeg voor- en achternaam samen en voeg deze toe aan de array van volledige namen
-        const fullName = firstNames[i] + " " + lastNames[i];
-        fullNames.push(fullName);
-    }
-
-    console.log(fullNames);
+// Doorloop de array met een for-loop en bereken de som
+for (let i=0; i<numbers.length; i++) {
+    sum += numbers[i];
 }
+
+// Toon de som in de console
+console.log("De som van de getallen is: " + sum);

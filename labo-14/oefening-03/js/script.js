@@ -1,15 +1,20 @@
+// Maak twee arrays met voornamen en achternamen
+const firstNames = ["Emma", "Liam", "Sophie", "Noah", "Fatima"];
+const lastNames = ["Pietersen", "de Vries", "Bakker", "Legrand", "Errazzouki"];
 
-// Vraag het aantal vrienden op via prompt
-const amountFriends = parseInt(prompt("Hoeveel vrienden wil je toevoegen?"));
+// Controleer of de lengte van beide arrays gelijk is
+if (firstNames.length !== lastNames.length) {
+    console.error("Fout: De lengte van de arrays is niet gelijk.");
+} else {
+    // Maak een lege array voor de volledige namen
+    const fullNames = [];
 
-// Maak een array voor de vrienden
-const friends = [];
+    // Gebruik een for-loop om door de lijst van namen te lopen
+    for (let i=0; i<firstNames.length; i++) {
+        // Voeg voor- en achternaam samen en voeg deze toe aan de array van volledige namen
+        const fullName = firstNames[i] + " " + lastNames[i];
+        fullNames.push(fullName);
+    }
 
-// Vraag X aantal keer de naam van de vriend en voeg toe aan het begin van de array
-for (let i = 0; i < amountFriends; i++) {
-    const friendName = prompt("Geef de naam van vriend " + (i + 1) + ":");
-    friends.unshift(friendName);
+    console.log(fullNames);
 }
-
-// Print de vriendenlijst in de console (laatste ingave eerst)
-console.log(friends);
