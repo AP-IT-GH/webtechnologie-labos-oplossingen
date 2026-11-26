@@ -26,7 +26,7 @@ socials.forEach(({ platform, link }) => {
 // zet versie 1 in commentaar als je deze versie wil uitproberen
 /*
 socials.forEach(({ platform, link }) => {
-    ul.insertAdjacentHTML("beforeEnd", `
+    ul.insertAdjacentHTML("beforeend", `
         <li>
             <a href="${link}" target="_blank">
                 <img src="assets/icon${platform}.png" />
