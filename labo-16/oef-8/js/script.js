@@ -1,32 +1,24 @@
-// JavaScript-functie die objecten sorteert op basis van een attribuutnaam
-function sortByAttribute(objectArray, attributeName) {
-  // Gebruik de sort-functie met een aangepaste vergelijkingsfunctie
-  objectArray.sort(function(a, b) {
-    // Vergelijk objecten op basis van het opgegeven attribuut
-    if (a[attributeName] < b[attributeName]) {
-      return -1;
-    } else if (a[attributeName] > b[attributeName]) {
-      return 1;
-    } else {
-      return 0;
-    }
-  });
+// JavaScript-functie die even getallen filtert en de overgebleven getallen verdubbelt
+function filterAndDouble(numbers) {
+    // Gebruik de filter-functie om alleen even getallen te behouden
+    const evenNumbers = numbers.filter(function(number) {
+      return number % 2 === 0;
+    });
 
-  // Retourneer de gesorteerde array van objecten
-  return objectArray;
-}
+    // Gebruik de map-functie om de overgebleven getallen te verdubbelen
+    const doubledNumbers = evenNumbers.map(function(number) {
+      return number * 2;
+    });
 
-// Voorbeeldgebruik van sortByAttribute-functie
-const people = [
-  { name: 'Bob', age: 45 },
-  { name: 'Charlie', age: 35 },
-  { name: 'Alice', age: 30 }
-];
+    // Retourneer de resulterende array
+    return doubledNumbers;
+  }
 
-console.log('Original Array:', people);
+  // Voorbeeldgebruik van filterAndDouble-functie
+  const inputNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// Sorteer objecten op basis van het attribuut 'age'
-const sortedPeople = sortByAttribute([...people], 'age');
+  // Filter en verdubbel de getallen
+  const resultArray = filterAndDouble(inputNumbers);
 
-console.log('Sorted Array:', sortedPeople);
-
+  console.log('Input Array:', inputNumbers);
+  console.log('Filtered and Doubled Array:', resultArray);

@@ -1,25 +1,25 @@
-function createCalculator(operation) {
-  if (operation === 'add') {
-    return function (num1, num2, callback) {
-      const result = num1 + num2;
-      callback(result);
-    };
-  } else if (operation === 'multiply') {
-    return function (num1, num2, callback) {
-      const result = num1 * num2;
-      callback(result);
-    };
-  } else {
-    return null;
-  }
+// Functie die elk element van een array in de console print met forEach
+function printAll(items) {
+  // forEach roept de callback één keer op voor elk element van de array
+  items.forEach((item) => console.log(item));
 }
 
-function printToConsole(result) {
-  console.log(result);
+// Functie die elk element print met zijn index erbij
+function printWithIndex(items) {
+  // De callback van forEach krijgt als tweede parameter de index van het element
+  items.forEach((item, index) => console.log(`${index}: ${item}`));
 }
 
-const addCalculator = createCalculator('add');
-addCalculator(5, 10, printToConsole);
+const planten = ['varen', 'cactus', 'monstera', 'basilicum'];
 
-const multiplyCalculator = createCalculator('multiply');
-multiplyCalculator(3, 4, printToConsole);
+printAll(planten);
+// varen
+// cactus
+// monstera
+// basilicum
+
+printWithIndex(planten);
+// 0: varen
+// 1: cactus
+// 2: monstera
+// 3: basilicum

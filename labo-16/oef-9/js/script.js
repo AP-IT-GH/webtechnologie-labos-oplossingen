@@ -1,24 +1,34 @@
-// JavaScript-functie die even getallen filtert en de overgebleven getallen verdubbelt
-function filterAndDouble(numbers) {
-    // Gebruik de filter-functie om alleen even getallen te behouden
-    const evenNumbers = numbers.filter(function(number) {
-      return number % 2 === 0;
-    });
+const producten = [
+  { naam: 'toetsenbord', prijs: 45 },
+  { naam: 'muis', prijs: 20 },
+  { naam: 'monitor', prijs: 180 },
+  { naam: 'webcam', prijs: 60 },
+];
 
-    // Gebruik de map-functie om de overgebleven getallen te verdubbelen
-    const doubledNumbers = evenNumbers.map(function(number) {
-      return number * 2;
-    });
+// find() doorloopt de array en geeft het EERSTE element terug
+// waarvoor de callback true teruggeeft. Daarna stopt hij.
+function findFirstExpensive(products, limiet) {
+  return products.find((product) => product.prijs > limiet);
+}
 
-    // Retourneer de resulterende array
-    return doubledNumbers;
-  }
+console.log(findFirstExpensive(producten, 50));
+// { naam: 'monitor', prijs: 180 }
 
-  // Voorbeeldgebruik van filterAndDouble-functie
-  const inputNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Zoeken op naam
+function findByName(products, naam) {
+  return products.find((product) => product.naam === naam);
+}
 
-  // Filter en verdubbel de getallen
-  const resultArray = filterAndDouble(inputNumbers);
+console.log(findByName(producten, 'muis'));
+// { naam: 'muis', prijs: 20 }
 
-  console.log('Input Array:', inputNumbers);
-  console.log('Filtered and Doubled Array:', resultArray);
+// Vindt find() niets, dan is het resultaat undefined.
+// Vang dat op voor je het resultaat gebruikt.
+const duurste = findFirstExpensive(producten, 500);
+
+if (duurste === undefined) {
+  console.log('Geen product gevonden boven die prijs');
+} else {
+  console.log(duurste.naam);
+}
+// Geen product gevonden boven die prijs
