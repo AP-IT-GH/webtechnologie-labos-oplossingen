@@ -1,18 +1,9 @@
-// Definieer de functie printTextBox met een string parameter
-function printTextBox(text) {
-    const length = text.length + 4;
+const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
+const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
 
-    // Toon de bovenste rand van de text-box
-    console.log("/" + "*".repeat(length) + "\\");
+const addressCopy = { ...address, number: 99 };
+const contact = { ...person, ...address };
 
-    // Toon de tekst in het tekstvak met de zijranden
-    console.log("| " + text + " |");
-
-    // Toon de onderste rand van de text-box
-    console.log("\\" + "*".repeat(length) + "/");
-}
-
-// Roep de functie aan met verschillende parameters
-printTextBox("HELLO WORLD");
-printTextBox("HALLO WERELD");
-printTextBox("HOLA MUNDO");
+console.log("Kopie:", addressCopy);
+console.log("Contact:", contact);
+console.log("Origineel ongewijzigd:", address);

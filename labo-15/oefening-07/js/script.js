@@ -1,17 +1,35 @@
-const temperatuur = parseFloat(prompt("Geef de temperatuur in:"));
-const eenheid = prompt("Is dit in Celsius (C) of Fahrenheit (F)?").trim().toUpperCase();
+const students = [
+    { name: "An",   grades: [14, 16, 12, 18] },
+    { name: "Ben",  grades: [9,   7, 11,  8] },
+    { name: "Cas",  grades: [15, 17, 14, 16] },
+    { name: "Dina", grades: [6,   8,  5,  9] },
+    { name: "Eli",  grades: [13, 11, 15, 12] },
+];
 
-if (eenheid === "C") {
-    const resultaat = (temperatuur * 9 / 5) + 32;
-    console.log(`${temperatuur}°C = ${resultaat.toFixed(2)}°F`);
-    alert(`${temperatuur}°C = ${resultaat.toFixed(2)}°F`);
+function calculateAverage(grades) {
+    let sum = 0;
+    for (const grade of grades) {
+        sum += grade;
+    }
+    return parseFloat((sum / grades.length).toFixed(2));
 }
-else if (eenheid === "F") {
-    const resultaat = (temperatuur - 32) * 5 / 9;
-    console.log(`${temperatuur}°F = ${resultaat.toFixed(2)}°C`);
-    alert(`${temperatuur}°F = ${resultaat.toFixed(2)}°C`);
+
+function getPassingStudents(students) {
+    const passing = [];
+    for (const student of students) {
+        if (calculateAverage(student.grades) >= 10) {
+            passing.push(student);
+        }
+    }
+    return passing;
 }
-else {
-    console.error("Ongeldige eenheid! Gebruik 'C' of 'F'.");
-    alert("Fout: ongeldig symbool. Gebruik 'C' of 'F'.");
+
+for (const student of students) {
+    console.log(`${student.name}: ${calculateAverage(student.grades)}`);
+}
+
+const passing = getPassingStudents(students);
+console.log("Geslaagde studenten:");
+for (const student of passing) {
+    console.log(`${student.name} is geslaagd`);
 }

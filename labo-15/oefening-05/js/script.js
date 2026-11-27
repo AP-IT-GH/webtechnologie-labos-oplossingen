@@ -1,12 +1,18 @@
-function sum(array) {
-    console.log(array);
+// Definieer de functie printTextBox met een string parameter
+function printTextBox(text) {
+    const length = text.length + 4;
 
-    let sum = 0;
-    for (let i=0; i < array.length; i++) {
-        sum  += array[i];
-    }
+    // Toon de bovenste rand van de text-box
+    console.log("/" + "*".repeat(length) + "\\");
 
-    return sum;
+    // Toon de tekst in het tekstvak met de zijranden
+    console.log("| " + text + " |");
+
+    // Toon de onderste rand van de text-box
+    console.log("\\" + "*".repeat(length) + "/");
 }
 
-console.log(`de som van de array is: ${sum([1, 2, 4, 5])}.`);
+// Roep de functie aan met verschillende parameters
+printTextBox("HELLO WORLD");
+printTextBox("HALLO WERELD");
+printTextBox("HOLA MUNDO");

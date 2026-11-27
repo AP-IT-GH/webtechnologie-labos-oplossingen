@@ -1,25 +1,22 @@
-// Definieer de functie nameFromEmail met een email parameter
-function nameFromEmail(email) {
-    // Vind de index van "@" in de email
-    const atIndex = email.indexOf("@");
+const cart = {
+    customer: "Lena",
+    order: { product: "Koptelefoon", price: 100 }
+};
 
-    // Neem het gedeelte voor "@"
-    let name = email.substring(0, atIndex);
+const shallowCopy = { ...cart };
+shallowCopy.customer = "Bram";
 
-    // Vervang het punt door een spatie
-    name  = name.replace(".", " ");
-    
-    // Geef de naam terug in hoofdletters
-    return name.toUpperCase();
-}
+console.log("Klant origineel:", cart.customer);
+console.log("Klant kopie:", shallowCopy.customer);
 
-// Vraag de gebruiker om hun email totdat ze een lege string invoeren
-let email;
-do {
-    email = prompt("Geef uw email:");
+shallowCopy.order.price = 80;
 
-    if (email !== null && email !== "") {
-        const fullName = nameFromEmail(email);
-        console.log(`De eigenaar van ${email} heet ${fullName}`);
-    }
-} while (email !== null && email !== "");
+console.log("Prijs origineel:", cart.order.price);
+console.log("Prijs kopie:", shallowCopy.order.price);
+console.log("De prijs is in beide objecten aangepast: spread kopieert enkel het eerste niveau, het geneste order-object wordt gedeeld.");
+
+const deepCopy = structuredClone(cart);
+deepCopy.order.price = 50;
+
+console.log("Prijs origineel:", cart.order.price);
+console.log("Prijs deep copy:", deepCopy.order.price);

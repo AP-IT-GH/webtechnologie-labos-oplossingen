@@ -1,9 +1,18 @@
-function mergeArrays(arr1, arr2) {
-    return [...arr1, ...arr2];
+const classicMemes   = ["Distracted Boyfriend", "Drake Hotline Bling", "Two Buttons"];
+const deepFriedMemes = ["Big Chungus", "Ugandan Knuckles", "Stonks"];
+const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at Cat"];
+
+function combineMemes(...memeCategories) {
+    let combined = [];
+    for (const category of memeCategories) {
+        combined = [...combined, ...category];
+    }
+    return combined;
 }
 
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
+const fullMemeList = combineMemes(classicMemes, deepFriedMemes, currentMemes);
+console.log("Volledige memelijst:", fullMemeList);
 
-const merged = mergeArrays(array1, array2);
-console.log(merged);
+const extendedMemeList = [...fullMemeList, "Giga Chad", "NPC Streamer"];
+console.log("Uitgebreide memelijst:", extendedMemeList);
+console.log("Originele lijst ongewijzigd:", fullMemeList);
