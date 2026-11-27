@@ -10,15 +10,15 @@ function printWithIndex(items) {
   items.forEach((item, index) => console.log(`${index}: ${item}`));
 }
 
-const planten = ['varen', 'cactus', 'monstera', 'basilicum'];
+const plants = ['varen', 'cactus', 'monstera', 'basilicum'];
 
-printAll(planten);
+printAll(plants);
 // varen
 // cactus
 // monstera
 // basilicum
 
-printWithIndex(planten);
+printWithIndex(plants);
 // 0: varen
 // 1: cactus
 // 2: monstera
