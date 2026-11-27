@@ -1,22 +1,47 @@
-const cart = {
-    customer: "Lena",
-    order: { product: "Koptelefoon", price: 100 }
+// een functie zonder argumenten die een getal teruggeeft
+function getNumber() {
+    return 42;
+}
+
+// een functie zonder argumenten die een string teruggeeft
+function getGreeting() {
+    return "Hallo!";
+}
+
+// een functie zonder argumenten die een boolean teruggeeft
+function isWebtechnologieLeuk() {
+    return true;
+}
+
+// een functie zonder argumenten die een string afprint in de console
+function printGreeting() {
+    console.log("Hallo vanuit een functie!");
+}
+
+// een functie met twee getallen die het resultaat afprint
+function printSum(firstNumber, secondNumber) {
+    console.log(firstNumber + secondNumber);
+}
+
+// dezelfde functie in arrow notatie
+const printSumArrow = (firstNumber, secondNumber) => {
+    console.log(firstNumber + secondNumber);
 };
 
-const shallowCopy = { ...cart };
-shallowCopy.customer = "Bram";
+// arrow functie met verkorte notatie: zonder accolades en zonder return
+const double = number => number * 2;
 
-console.log("Klant origineel:", cart.customer);
-console.log("Klant kopie:", shallowCopy.customer);
+// functie met een standaardwaarde voor de tweede parameter
+function multiply(number, factor = 2) {
+    return number * factor;
+}
 
-shallowCopy.order.price = 80;
-
-console.log("Prijs origineel:", cart.order.price);
-console.log("Prijs kopie:", shallowCopy.order.price);
-console.log("De prijs is in beide objecten aangepast: spread kopieert enkel het eerste niveau, het geneste order-object wordt gedeeld.");
-
-const deepCopy = structuredClone(cart);
-deepCopy.order.price = 50;
-
-console.log("Prijs origineel:", cart.order.price);
-console.log("Prijs deep copy:", deepCopy.order.price);
+console.log(getNumber());
+console.log(getGreeting());
+console.log(isWebtechnologieLeuk());
+printGreeting();
+printSum(3, 4);
+printSumArrow(3, 4);
+console.log(double(5));
+console.log(multiply(5));
+console.log(multiply(5, 10));

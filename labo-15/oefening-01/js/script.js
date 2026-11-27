@@ -1,9 +1,9 @@
-function mergeArrays(arr1, arr2) {
-    return [...arr1, ...arr2];
-}
+const address = { street: "Lange Nieuwstraat", number: 14, city: "Antwerpen" };
+const person  = { firstName: "Lena", lastName: "Peeters", age: 21 };
 
-const array1 = [1, 2, 3];
-const array2 = [4, 5, 6];
+const addressCopy = { ...address, number: 99 };
+const contact = { ...person, ...address };
 
-const merged = mergeArrays(array1, array2);
-console.log(merged);
+console.log("Kopie:", addressCopy);
+console.log("Contact:", contact);
+console.log("Origineel ongewijzigd:", address);
