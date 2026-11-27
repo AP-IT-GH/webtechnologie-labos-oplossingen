@@ -1,12 +1,19 @@
-function sum(array) {
-    console.log(array);
+const cities = [
+    { name: "Gent", temperature: 12 },
+    { name: "Antwerpen", temperature: 4 },
+    { name: "Hasselt", temperature: 25 },
+    { name: "Brugge", temperature: 9 },
+    { name: "Leuven", temperature: 7 },
+];
 
-    let sum = 0;
-    for (let i=0; i < array.length; i++) {
-        sum  += array[i];
-    }
-
-    return sum;
+function compareTemperature(a, b) {
+    return a.temperature - b.temperature;
 }
 
-console.log(`de som van de array is: ${sum([1, 2, 4, 5])}.`);
+console.log("Koudste eerst:", [...cities].sort(compareTemperature));
+console.log("Originele lijst ongewijzigd:", cities);
+
+console.log("Warmste eerst:", [...cities].sort((a, b) => b.temperature - a.temperature));
+
+cities.sort(compareTemperature);
+console.log("sort() past de originele array aan:", cities);

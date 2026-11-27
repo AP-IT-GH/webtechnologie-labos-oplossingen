@@ -1,35 +1,18 @@
-const students = [
-    { name: "An",   grades: [14, 16, 12, 18] },
-    { name: "Ben",  grades: [9,   7, 11,  8] },
-    { name: "Cas",  grades: [15, 17, 14, 16] },
-    { name: "Dina", grades: [6,   8,  5,  9] },
-    { name: "Eli",  grades: [13, 11, 15, 12] },
-];
+const classicMemes   = ["Distracted Boyfriend", "Drake Hotline Bling", "Two Buttons"];
+const deepFriedMemes = ["Big Chungus", "Ugandan Knuckles", "Stonks"];
+const currentMemes   = ["He's Right You Know", "This is Fine", "Woman Yelling at Cat"];
 
-function calculateAverage(grades) {
-    let sum = 0;
-    for (const grade of grades) {
-        sum += grade;
+function combineMemes(...memeCategories) {
+    let combined = [];
+    for (const category of memeCategories) {
+        combined = [...combined, ...category];
     }
-    return parseFloat((sum / grades.length).toFixed(2));
+    return combined;
 }
 
-function getPassingStudents(students) {
-    const passing = [];
-    for (const student of students) {
-        if (calculateAverage(student.grades) >= 10) {
-            passing.push(student);
-        }
-    }
-    return passing;
-}
+const fullMemeList = combineMemes(classicMemes, deepFriedMemes, currentMemes);
+console.log("Volledige memelijst:", fullMemeList);
 
-for (const student of students) {
-    console.log(`${student.name}: ${calculateAverage(student.grades)}`);
-}
-
-const passing = getPassingStudents(students);
-console.log("Geslaagde studenten:");
-for (const student of passing) {
-    console.log(`${student.name} is geslaagd`);
-}
+const extendedMemeList = [...fullMemeList, "Giga Chad", "NPC Streamer"];
+console.log("Uitgebreide memelijst:", extendedMemeList);
+console.log("Originele lijst ongewijzigd:", fullMemeList);
